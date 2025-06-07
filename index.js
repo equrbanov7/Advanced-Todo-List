@@ -83,11 +83,7 @@ function addTodo(e){
        }
     });
     */
-   for(let i =0;i<10;i++){
-       if(newTodo=== todos[i]){
-           isThere=true;
-       }
-   };
+  isThere = todos.includes(newTodo);
     if(newTodo=== ""){
         showAlert("danger","Please enter a todo...");
         
@@ -112,6 +108,7 @@ function addTodo(e){
     e.preventDefault();
 }
 function getTodosFrontStorage(){ // Storagelardan Todolari almak
+    let todos;
     if(localStorage.getItem("todos")=== null){
         todos=[];
     }
